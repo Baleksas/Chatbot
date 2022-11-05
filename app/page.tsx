@@ -8,7 +8,7 @@ const LazyVoxelModel = dynamic(() => import("../components/Model"), {
   ssr: false,
   loading: () => <Loader />,
 });
-
+// todo: make widths smaller, mobile-first
 export default function Home() {
   return (
     <div className={styles.container}>

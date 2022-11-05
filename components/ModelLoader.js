@@ -6,8 +6,8 @@ export const ModelSpinner = () => <span>loading...</span>;
 export const ModelContainer = forwardRef(({ children }, ref) => (
   <div
     style={{
-      width: "400px",
-      height: "400px",
+      width: "640px",
+      height: "640px",
       overflow: "hidden",
     }}
     ref={ref}
