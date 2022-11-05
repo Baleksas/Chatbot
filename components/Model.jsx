@@ -12,12 +12,12 @@ const VoxelModel = () => {
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
   const [_camera, setCamera] = useState();
-  const [target] = useState(new THREE.Vector3(-0.5, 2, 0.2));
+  const [target] = useState(new THREE.Vector3(0, 1, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
-      20 * Math.sin(0.2 * Math.PI),
-      10,
-      20 * Math.cos(0.2 * Math.PI)
+      0 * Math.sin(0.2 * Math.PI),
+      0,
+      10 * Math.cos(0.2 * Math.PI)
     )
   );
   const [scene] = useState(new THREE.Scene());
@@ -50,13 +50,13 @@ const VoxelModel = () => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const scale = scH * 0.009;
+      const scale = scH * 0.005;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        0.01,
+        0.1,
         50000
       );
       camera.position.copy(initialCameraPosition);

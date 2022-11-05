@@ -4,7 +4,14 @@ import { forwardRef } from "react";
 export const ModelSpinner = () => <span>loading...</span>;
 
 export const ModelContainer = forwardRef(({ children }, ref) => (
-  <div ref={ref} className="modelContainer">
+  <div
+    style={{
+      width: "400px",
+      height: "400px",
+      overflow: "hidden",
+    }}
+    ref={ref}
+  >
     {children}
   </div>
 ));
