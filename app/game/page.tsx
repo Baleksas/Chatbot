@@ -1,8 +1,9 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import styles from "../../styles/Home.module.css";
 
-export const page = () => {
+export default function Game() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -16,5 +17,4 @@ export const page = () => {
       </main>
     </div>
   );
-};
-export default page;
+}

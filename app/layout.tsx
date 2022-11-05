@@ -1,6 +1,7 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import type { AppProps } from "next/app";
+import Footer from "../components/Footer";
+import "../styles/globals.css";
+import Header from "../components/Header";
 
 export default function RootLayout({
   children,
@@ -9,10 +10,11 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <Header title="YOU VS AI" />
-      <body>{children}</body>
-      <Footer />
+      <body>
+        {/* <Header /> */}
+        {children}
+        {/* <Footer /> */}
+      </body>
     </html>
   );
 }
-import "../styles/globals.css";

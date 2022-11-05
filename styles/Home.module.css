@@ -14,7 +14,6 @@
   align-items: center;
   width: 50%;
   height: max-content;
-  border: 1px solid white;
   border-radius: 5px;
   margin: auto;
 }
@@ -147,6 +146,8 @@
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+  margin: 1em;
+  margin-top: 2em;
 }
 
 .buttonKeyboard:focus {
