@@ -1,7 +1,17 @@
 .container {
   padding: 0 2rem;
+  width: 80%;
+  margin: auto;
 }
+.modelContainer {
+  background-color: "black";
+  margin: "auto";
+  width: 100%;
+  height: "30vh";
+  position: "relative";
 
+  height: 460;
+}
 .main {
   min-height: 100vh;
   padding: 4rem 0;
