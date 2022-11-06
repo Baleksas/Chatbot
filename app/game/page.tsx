@@ -11,7 +11,38 @@ export default function Game() {
       <main className={styles.main}>
         <code className={styles.code}>Told you! 🥸</code>
         <code className={styles.code}>
-          <ToolTip>Now, choose your avatar</ToolTip>
+          <ToolTip title="Now, choose your avatar">
+            {" "}
+            You can use{" "}
+            <button
+              className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
+              role="button"
+            >
+              Tab
+            </button>{" "}
+            ,
+            <button
+              className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
+              role="button"
+            >
+              Shift
+            </button>{" "}
+            +
+            <button
+              className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
+              role="button"
+            >
+              Tab
+            </button>{" "}
+            and{" "}
+            <button
+              className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
+              role="button"
+            >
+              Space
+            </button>{" "}
+            to navigate in a more special way!
+          </ToolTip>
         </code>
         <AvatarsSelection />
         <Link href="/">
