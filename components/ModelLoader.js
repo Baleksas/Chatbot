@@ -1,20 +1,10 @@
-/* eslint-disable react/display-name */
 import { forwardRef } from "react";
+import styles from "../styles/Home.module.css";
 
 export const ModelSpinner = () => <span>loading...</span>;
 
 export const ModelContainer = forwardRef(({ children }, ref) => (
-  <div
-    style={{
-      width: "640px",
-      height: "640px",
-      border: " 1px solid white",
-      borderRadius: "100%",
-      margin: "2em",
-      overflow: "hidden",
-    }}
-    ref={ref}
-  >
+  <div className={styles.modelContainer} ref={ref}>
     {children}
   </div>
 ));

@@ -14,7 +14,7 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>YOU VS 🤖</h1>
-        <LazyVoxelModel />
+        <LazyVoxelModel model="/robot.gltf" />
         <code className={styles.code}>A game you can&apos;t refuse to try</code>
         <Link className={styles.buttonKeyboard} href="/game">
           Play

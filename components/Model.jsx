@@ -7,7 +7,7 @@ function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelModel = () => {
+const VoxelModel = ({ model }) => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
@@ -71,7 +71,7 @@ const VoxelModel = () => {
       controls.target = target;
       setControls(controls);
       ("/scene.gltf");
-      loadGLTFModel(scene, "/robot.gltf", {
+      loadGLTFModel(scene, `${model}`, {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
