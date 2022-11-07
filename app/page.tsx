@@ -1,7 +1,7 @@
 "use client";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import Loader from "../components/ModelLoader";
+import Loader, { ModelSpinner } from "../components/ModelLoader";
 import Link from "next/link";
 import React from "react";
 const LazyVoxelModel = dynamic(() => import("../components/Model"), {
@@ -14,6 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>🫵 VS 🤖</h1>
         <LazyVoxelModel model="/robot.gltf" />
+
         <code className={styles.code}>A game you can&apos;t refuse to try</code>
         <Link className={styles.buttonKeyboard} href="/game">
           Play
