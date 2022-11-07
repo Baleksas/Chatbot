@@ -1,7 +1,8 @@
-import React from "react";
+async function getData() {
+  const res = await fetch("https://api.github.com/users/Baleksas/repos");
+  return res.json();
+}
 
-const page = () => {
-  return <div>Start</div>;
-};
-
-export default page;
+export default function start() {
+  return <div>START PAGE</div>;
+}
