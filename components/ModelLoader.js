@@ -3,18 +3,20 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import LoadingGif from "../public/loading-gif.gif";
 export const ModelSpinner = () => (
-  <div
+  <Image
     style={{
       position: "absolute",
       justifyContent: "center",
       justifyItems: "center",
-      top: "50%",
+      top: "45%",
       left: "50%",
       transform: "translate(-50%, -50%)",
     }}
-  >
-    <Image width={50} height={50} alt="loading" src={LoadingGif} />
-  </div>
+    width={50}
+    height={50}
+    alt="loading"
+    src={LoadingGif}
+  />
 );
 
 export const ModelContainer = forwardRef(({ children }, ref) => (
