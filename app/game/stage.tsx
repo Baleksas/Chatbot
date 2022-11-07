@@ -48,10 +48,16 @@ export default function Stage({ avatarSelected, setAvatarSelected }: any) {
           setAvatarSelected={setAvatarSelected}
         />
         {avatarSelected && (
-          <div>
+          <code
+            style={{
+              fontSize: "35px",
+            }}
+          >
             {avatarSelected}, very well.
-            <button className={styles.buttonKeyboard}>Next</button>
-          </div>
+            <Link href="/game/start" className={styles.buttonKeyboard}>
+              Next
+            </Link>
+          </code>
         )}
         <Link href="/">
           <button className={styles.buttonKeyboard} role="button">

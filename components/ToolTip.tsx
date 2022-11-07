@@ -6,7 +6,6 @@ const ToolTip = ({ children, title }: any) => {
     <React.Fragment>
       <div className={styles.hoverText}>
         {title}
-
         <span className={styles.tooltipText} id={styles.top}>
           {children}
         </span>
