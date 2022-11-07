@@ -1,9 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import ToolTip from "./ToolTip";
 
-const AvatarsSelection = () => {
+const AvatarsSelection = ({ avatarSelected, setAvatarSelected }: any) => {
   const avatarsNames = [
     "🦖 rex",
     "🐥 mcduck",
@@ -17,13 +17,15 @@ const AvatarsSelection = () => {
     <section className={styles.section}>
       {avatarsNames.map((avatarName) => {
         return (
-          <button
+          <input
             style={{ fontSize: "23px" }}
             key={avatarName}
+            onClick={(e) => setAvatarSelected(e.target?.value)}
             className={styles.buttonKeyboard}
-          >
-            {avatarName}
-          </button>
+            type="button"
+            value={avatarName}
+            id="myButton1"
+          ></input>
         );
       })}
     </section>

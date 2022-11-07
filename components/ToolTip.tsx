@@ -3,12 +3,15 @@ import styles from "../styles/Home.module.css";
 
 const ToolTip = ({ children, title }: any) => {
   return (
-    <div className={styles.hoverText}>
-      {title}
-      <span className={styles.tooltipText} id={styles.top}>
-        {children}
-      </span>
-    </div>
+    <React.Fragment>
+      <div className={styles.hoverText}>
+        {title}
+
+        <span className={styles.tooltipText} id={styles.top}>
+          {children}
+        </span>
+      </div>
+    </React.Fragment>
   );
 };
 
