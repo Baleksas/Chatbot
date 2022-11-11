@@ -7,7 +7,7 @@ function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelModel = ({ model }) => {
+const ModelHelp = ({ model }) => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
@@ -124,4 +124,4 @@ const VoxelModel = ({ model }) => {
   );
 };
 
-export default VoxelModel;
+export default ModelHelp;

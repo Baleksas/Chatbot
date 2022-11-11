@@ -25,7 +25,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/Model.jsx"
+    "components/ModelRobot.jsx"
   ],
   "exclude": ["node_modules"]
 }
