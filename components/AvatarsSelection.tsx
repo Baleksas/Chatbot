@@ -22,7 +22,7 @@ const AvatarsSelection = ({ avatarSelected, setAvatarSelected }: any) => {
             key={avatarName}
             onClick={(e) => {
               const target = e.target as HTMLInputElement;
-              return setAvatarSelected(target?.value);
+              setAvatarSelected(target?.value);
             }}
             className={styles.buttonKeyboard}
             type="button"
