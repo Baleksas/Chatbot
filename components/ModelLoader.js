@@ -12,8 +12,8 @@ export const ModelSpinner = () => (
       left: "50%",
       transform: "translate(-50%, -50%)",
     }}
-    width={50}
-    height={50}
+    width={23}
+    height={23}
     alt="loading"
     src={LoadingGif}
   />

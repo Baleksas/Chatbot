@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
+import styles from "../styles/Home.module.css";
 import { ModelContainer, ModelSpinner } from "./ModelLoader";
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));

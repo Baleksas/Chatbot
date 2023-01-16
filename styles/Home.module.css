@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 .container {
   padding: 0 2rem;
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 
@@ -18,8 +18,9 @@
   margin: auto;
 }
 .modelContainer {
-  width: 640px;
-  height: 640px;
+  max-width: 300px;
+  width: 80%;
+  height: 300px;
   align-items: center;
   border: 1px solid white;
   border-radius: 100%;
@@ -61,7 +62,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 48px;
 }
 
 .title,
@@ -77,14 +78,14 @@
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .code {
   background: #fafafa;
   border-radius: 5px;
   padding: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 22px;
   margin: 1em;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
@@ -119,12 +120,12 @@
 
 .card h2 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 22px;
   line-height: 1.5;
 }
 
@@ -255,11 +256,12 @@
   transform: translateY(2px);
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.modelContainer {
+  min-width: 400px;
+  height: 400px;
+}
+.container {
+  width: 95%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -273,5 +275,22 @@
   }
   .logo img {
     filter: invert(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .modelContainer {
+    width: 95%;
+  }
+  .container {
+    width: 95%;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .main {
+    justify-content: space-around;
+    display: none;
   }
 }
