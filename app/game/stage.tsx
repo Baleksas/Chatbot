@@ -4,8 +4,11 @@ import React from "react";
 import AvatarsSelection from "../../components/AvatarsSelection";
 import ToolTip from "../../components/ToolTip";
 import styles from "../../styles/Home.module.css";
+import { useState } from "react";
 
-export default function Stage({ avatarSelected, setAvatarSelected }: any) {
+export default function Stage() {
+  const [avatarSelected, setAvatarSelected] = useState("Anonymous 🎭");
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -43,10 +46,7 @@ export default function Stage({ avatarSelected, setAvatarSelected }: any) {
             to navigate in a more special way!
           </ToolTip>
         </code>
-        <AvatarsSelection
-          avatarSelected={avatarSelected}
-          setAvatarSelected={setAvatarSelected}
-        />
+        <AvatarsSelection setAvatarSelected={setAvatarSelected} />
         {avatarSelected && (
           <code
             style={{

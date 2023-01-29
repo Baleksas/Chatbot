@@ -70,10 +70,11 @@
   text-align: center;
 }
 .section {
-  /* background-color: rgba(255, 255, 255, 0.3); */
+  text-align: center;
   width: 100%;
   min-height: 100px;
   justify-content: space-around;
+  justify-items: center;
 }
 .description {
   margin: 4rem 0;
@@ -264,20 +265,6 @@
   width: 95%;
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: rgb(215, 215, 215);
-    color: black;
-  }
-  .logo img {
-    filter: invert(1);
-  }
-}
-
 @media (max-width: 600px) {
   .modelContainer {
     width: 95%;
@@ -292,5 +279,19 @@
   .main {
     justify-content: space-around;
     display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: rgb(215, 215, 215);
+    color: black;
+  }
+  .logo img {
+    filter: invert(1);
   }
 }

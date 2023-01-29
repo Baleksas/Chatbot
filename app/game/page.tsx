@@ -5,20 +5,11 @@ import AvatarsSelection from "../../components/AvatarsSelection";
 import ToolTip from "../../components/ToolTip";
 import styles from "../../styles/Home.module.css";
 import Stage from "./stage";
-import Start from "./start/page";
 
 export default function Game() {
-  const [avatarSelected, setAvatarSelected] = useState("");
-  useEffect(() => {
-    console.log(avatarSelected);
-  }, [avatarSelected]);
-
   return (
     <div className={styles.container}>
-      <Stage
-        avatarSelected={avatarSelected}
-        setAvatarSelected={setAvatarSelected}
-      />
+      <Stage />
     </div>
   );
 }

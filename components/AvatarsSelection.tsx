@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import ToolTip from "./ToolTip";
 
-const AvatarsSelection = ({ avatarSelected, setAvatarSelected }: any) => {
+const AvatarsSelection = ({ setAvatarSelected }: any) => {
   const avatarsNames = [
     "🦖 rex",
     "🐥 mcduck",
@@ -18,9 +18,9 @@ const AvatarsSelection = ({ avatarSelected, setAvatarSelected }: any) => {
       {avatarsNames.map((avatarName) => {
         return (
           <input
-            style={{ fontSize: "23px" }}
+            style={{ fontSize: "18px" }}
             key={avatarName}
-            onClick={(e) => {
+            onClick={async (e) => {
               const target = e.target as HTMLInputElement;
               setAvatarSelected(target?.value);
             }}
