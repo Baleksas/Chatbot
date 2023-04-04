@@ -2,12 +2,14 @@
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import Loader, { ModelSpinner } from "../components/ModelLoader";
-import Link from "next/link";
+import NextLink from "next/link";
 import React from "react";
+
 const LazyModel = dynamic(() => import("../components/ModelRobot"), {
   ssr: false,
   loading: () => <Loader />,
 });
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -16,9 +18,9 @@ export default function Home() {
         <LazyModel model="/robot.gltf" />
 
         <code className={styles.code}>A game you can&apos;t refuse to try</code>
-        <Link className={styles.buttonKeyboard} href="/game">
+        <NextLink className={styles.buttonKeyboard} href="/game">
           Play
-        </Link>
+        </NextLink>
       </main>
     </div>
   );
