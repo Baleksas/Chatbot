@@ -1,6 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
-import Text from "@mui/material/TextField";
 
 import { Typography } from "@mui/material";
 const Rules = () => {
