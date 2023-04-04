@@ -257,6 +257,11 @@
   transform: translateY(2px);
 }
 
+.buttonFight {
+  background-color: #ffffff;
+  color: rgb(186, 82, 82);
+}
+
 .modelContainer {
   min-width: 400px;
   height: 400px;
