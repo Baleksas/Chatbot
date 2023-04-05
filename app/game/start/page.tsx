@@ -1,14 +1,15 @@
 "use client";
 import NextLink from "next/link";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useAppContext } from "../../../context/context";
 import "../../../styles/globals.css";
 import styles from "../../../styles/Home.module.css";
 import Rules from "../../../components/Rules";
 import FormAI from "../../../components/FormAI";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import Greeting from "../../../components/Greeting";
 import TimedComponent from "../../../components/TimedComponent";
+import FightChat from "../../../components/FightChat";
 
 export default function Start() {
   const [randInt, setRandInt] = useState(0);
@@ -29,7 +30,10 @@ export default function Start() {
             </button>
           </>
         ) : (
-          <FormAI />
+          <Fragment>
+            <FightChat />
+            <FormAI />
+          </Fragment>
         )}
         {!agree ? (
           <NextLink href="/game">

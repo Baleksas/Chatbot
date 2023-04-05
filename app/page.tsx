@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Loader, { ModelSpinner } from "../components/ModelLoader";
 import NextLink from "next/link";
 import React from "react";
-
+import { Container } from "@mui/material";
 const LazyModel = dynamic(() => import("../components/ModelRobot"), {
   ssr: false,
   loading: () => <Loader />,
@@ -12,7 +12,7 @@ const LazyModel = dynamic(() => import("../components/ModelRobot"), {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container maxWidth="sm">
       <main className={styles.main}>
         <h1 className={styles.title}>🫵 VS 🤖</h1>
         <LazyModel model="/robot.gltf" />
@@ -22,6 +22,6 @@ export default function Home() {
           Play
         </NextLink>
       </main>
-    </div>
+    </Container>
   );
 }

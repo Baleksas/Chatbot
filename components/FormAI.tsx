@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
+import { TextField, Button, Box } from "@mui/material";
 
 const FormAI = () => {
   const [inputValue, setInputValue] = useState({
@@ -9,6 +10,10 @@ const FormAI = () => {
     secondArg: "",
   });
   const [result, setResult] = useState();
+
+  console.log(inputValue);
+  console.log(result);
+
   async function onSubmit(event: any) {
     event.preventDefault();
     try {
@@ -41,32 +46,25 @@ const FormAI = () => {
   return (
     <Fragment>
       <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          name="firstArg"
-          placeholder="Enter ..."
-          value={inputValue.firstArg}
-          onChange={(e) =>
-            setInputValue({
-              ...inputValue,
-              firstArg: e.target.value,
-            })
-          }
-        />
-        <input
-          type="text"
-          name="secondArg"
-          placeholder="Enter ..."
-          value={inputValue.secondArg}
-          onChange={(e) =>
-            setInputValue({
-              ...inputValue,
-              secondArg: e.target.value,
-            })
-          }
-        />
-        <input type="submit" value="GO!" />
+        <Box display={"flex"} flexDirection={"column"}>
+          <TextField
+            sx={{ input: { color: "white", borderColor: "white" } }}
+            name="secondArg"
+            placeholder="You say..."
+            value={inputValue.secondArg}
+            onChange={(e) =>
+              setInputValue({
+                ...inputValue,
+                secondArg: e.target.value,
+              })
+            }
+          />
+          <button className={`${styles.buttonKeyboard} ${styles.buttonFight}`}>
+            Shout!
+          </button>
+        </Box>
       </form>
+
       <div className={styles.result}>{result}</div>
     </Fragment>
   );
