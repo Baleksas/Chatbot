@@ -12,7 +12,6 @@ import TimedComponent from "../../../components/TimedComponent";
 import FightChat from "../../../components/FightChat";
 
 export default function Start() {
-  const [randInt, setRandInt] = useState(0);
   const [agree, setAgree] = useState(false);
 
   return (
