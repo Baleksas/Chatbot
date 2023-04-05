@@ -31,7 +31,6 @@ export default function Start() {
           </>
         ) : (
           <Fragment>
-            <FightChat />
             <FormAI />
           </Fragment>
         )}

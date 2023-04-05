@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import { TextField, Button, Box } from "@mui/material";
+import FightChat from "./FightChat";
 
 const FormAI = () => {
   const [inputValue, setInputValue] = useState({
@@ -45,6 +46,7 @@ const FormAI = () => {
   }
   return (
     <Fragment>
+      <FightChat result={result} />
       <form onSubmit={onSubmit}>
         <Box display={"flex"} flexDirection={"column"}>
           <TextField

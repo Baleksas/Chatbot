@@ -19,10 +19,10 @@ export default async function (req, res) {
   const firstArg = req.body.firstArg || "";
   const secondArg = req.body.secondArg || "";
 
-  if (firstArg.trim().length === 0) {
+  if (secondArg.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Please enter a valid firstArg",
+        message: "Please enter a valid secondArg",
       },
     });
     return;
@@ -31,7 +31,7 @@ export default async function (req, res) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(firstArg),
+      prompt: generatePrompt(secondArg),
       temperature: 0.6,
     });
     res.status(200).json({ result: completion.data.choices[0].text });

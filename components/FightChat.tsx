@@ -9,12 +9,12 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const FightChat = () => {
+const FightChat = ({ result }: any) => {
   return (
     <Box>
       <Stack spacing={2}>
-        <Item>Item 1</Item>
-        <Item>Item 2</Item>
+        <Item>AI:</Item>
+        <Item>You:</Item>
       </Stack>
       <Typography>Sample text</Typography>
     </Box>
