@@ -27,21 +27,24 @@ export default async function (req, res) {
     });
     return;
   }
-
   try {
-    const completion = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: generatePrompt(secondArg),
-      temperature: 0.6,
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: generatePrompt({ firstArg, secondArg }),
+      max_tokens: 100,
     });
-    res.status(200).json({ result: completion.data.choices[0].text });
+    console.log(completion.data);
+    res
+      .status(200)
+      .json({ result: completion.data.choices[0].message.content });
   } catch (error) {
+    console.log(error);
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);
     } else {
-      console.error(`Error with OpenAI API request: ${error.message}`);
+      console.log(`Error with OpenAI API request: ${error.message}`);
       res.status(500).json({
         error: {
           message: "An error occurred during your request.",
@@ -52,9 +55,24 @@ export default async function (req, res) {
 }
 
 function generatePrompt(data) {
-  const jobRole = data[0].toUpperCase() + data.slice(1).toLowerCase();
-  return `Your role: Hiring manager for ${jobRole}
+  const { firstArg, secondArg } = data;
+  return [
+    { role: "system", content: `You are a  developer.` },
+    {
+      role: "user",
+      content: "Which npm package is best of openai api development?",
+    },
+    {
+      role: "assistant",
+      content: "The 'openai' Node.js library.",
+    },
+    { role: "user", content: "question" },
+  ];
 
-Interviewee: ${data[0].interviewee}
-AI answer:`;
+  //   `
+  // You have to make a cartoon-like story sentence according to user's message. User's character is a whale. Story has to be related to the character. You have to write one sentence response to the user's message for a story to develop further by making a response action as a storyteller.
+  // Difficulty level: ${firstArg}
+  // User: ${secondArg}
+  // AI answer:
+  // `;
 }
