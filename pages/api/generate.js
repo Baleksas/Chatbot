@@ -57,22 +57,13 @@ export default async function (req, res) {
 function generatePrompt(data) {
   const { firstArg, secondArg } = data;
   return [
-    { role: "system", content: `You are a  developer.` },
+    {
+      role: "system",
+      content: `You have to ask one question about nature. Difficulty level: ${firstArg}`,
+    },
     {
       role: "user",
-      content: "Which npm package is best of openai api development?",
+      content: `${secondArg}`,
     },
-    {
-      role: "assistant",
-      content: "The 'openai' Node.js library.",
-    },
-    { role: "user", content: "question" },
   ];
-
-  //   `
-  // You have to make a cartoon-like story sentence according to user's message. User's character is a whale. Story has to be related to the character. You have to write one sentence response to the user's message for a story to develop further by making a response action as a storyteller.
-  // Difficulty level: ${firstArg}
-  // User: ${secondArg}
-  // AI answer:
-  // `;
 }

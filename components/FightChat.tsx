@@ -9,14 +9,18 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const FightChat = ({ result }: any) => {
+type FightChatProps = {
+  userMessage: string;
+  result: string;
+};
+
+const FightChat = ({ userMessage, result }: FightChatProps) => {
   return (
     <Box>
       <Stack spacing={2}>
-        <Item>AI:</Item>
-        <Item>You:</Item>
+        {userMessage && <Item>You: {userMessage}</Item>}
+        {result && <Item>AI: {result}</Item>}
       </Stack>
-      <Typography>Sample text</Typography>
     </Box>
   );
 };

@@ -10,7 +10,7 @@ const FormAI = () => {
     firstArg: "",
     secondArg: "",
   });
-  const [result, setResult] = useState();
+  const [result, setResult] = useState("");
 
   console.log(inputValue);
   console.log(result);
@@ -46,7 +46,7 @@ const FormAI = () => {
   }
   return (
     <Fragment>
-      <FightChat result={result} />
+      <FightChat userMessage={inputValue.secondArg} result={result} />
       <form onSubmit={onSubmit}>
         <Box display={"flex"} flexDirection={"column"}>
           <TextField
@@ -66,8 +66,6 @@ const FormAI = () => {
           </button>
         </Box>
       </form>
-
-      <div className={styles.result}>{result}</div>
     </Fragment>
   );
 };
