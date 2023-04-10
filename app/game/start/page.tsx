@@ -10,6 +10,7 @@ import { Button, Typography, Box } from "@mui/material";
 import Greeting from "../../../components/Greeting";
 import TimedComponent from "../../../components/TimedComponent";
 import FightChat from "../../../components/FightChat";
+import Form from "../../../components/Form";
 
 export default function Start() {
   const [agree, setAgree] = useState(false);
@@ -30,7 +31,7 @@ export default function Start() {
           </>
         ) : (
           <Fragment>
-            <FormAI />
+            <Form />
           </Fragment>
         )}
         {!agree ? (
