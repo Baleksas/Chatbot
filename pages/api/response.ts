@@ -9,6 +9,7 @@ if (!process.env.OPENAI_API_KEY) {
   throw new Error("Missing env var from OpenAI");
 }
 
+//FIXME: might be an issue of deployment
 export const runtime = "edge";
 
 export default async function handler(request: Request) {
