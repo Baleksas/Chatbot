@@ -12,7 +12,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { useAppContext } from "../context/context";
+import { useAppContext, InitialState } from "../context/context";
 import NextLink from "next/link";
 import { Typography } from "@mui/material";
 
@@ -148,10 +148,23 @@ const Form = () => {
         <NextLink href="/game/">
           <button className={styles.buttonKeyboard}>Back</button>
         </NextLink>
+        <Box textAlign={"center"} padding={"auto"}>
+          {storyMode ? (
+            <>
+              <Typography variant="h5" textAlign={"center"} margin={"auto"}>
+                Story Mode
+              </Typography>
+              <Typography variant="body1" textAlign={"center"} margin={"auto"}>
+                {nickname}
+              </Typography>
+            </>
+          ) : (
+            <Typography variant="h5" textAlign={"center"} margin={"auto"}>
+              Experiemental mode
+            </Typography>
+          )}
+        </Box>
 
-        <Typography variant="h5">
-          {storyMode ? "Story Mode" : "Experiemental mode"}
-        </Typography>
         <button
           onClick={handleReset}
           type="reset"
@@ -161,7 +174,7 @@ const Form = () => {
         </button>
       </Box>
 
-      <Box>
+      <Box flex={1}>
         {isLoading ? (
           <CircularProgress />
         ) : response ? (

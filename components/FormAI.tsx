@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, FormEvent } from "react";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
@@ -15,7 +15,7 @@ const FormAI = () => {
   console.log(inputValue);
   console.log(result);
 
-  async function onSubmit(event: any) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
       const response = await fetch("/api/generate", {

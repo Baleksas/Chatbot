@@ -5,11 +5,12 @@ import React from "react";
 import AvatarsSelection from "../../components/AvatarsSelection";
 import ToolTip from "../../components/ToolTip";
 import styles from "../../styles/Home.module.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useAppContext } from "../../context/context";
 import { Box, Checkbox, FormControlLabel } from "@mui/material";
 import { InitialState } from "../../context/context";
 import TimedComponent from "../../components/TimedComponent";
+import CustomName from "@/components/CustomName";
 export default function Game() {
   // const [nickname, setNickname] = useAppContext();
   // const [storyMode, setStoryMode] = useaP(false);
@@ -46,7 +47,7 @@ export default function Game() {
               fontSize: "35px",
             }}
           >
-            {nickname}
+            {storyMode ? <CustomName /> : null}
             <NextLink href="/game/start" className={styles.buttonKeyboard}>
               <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
             </NextLink>
