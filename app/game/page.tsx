@@ -7,8 +7,9 @@ import ToolTip from "../../components/ToolTip";
 import styles from "../../styles/Home.module.css";
 import { useState, useContext } from "react";
 import { useAppContext } from "../../context/context";
-import { Box, Checkbox } from "@mui/material";
+import { Box, Checkbox, FormControlLabel } from "@mui/material";
 import { InitialState } from "../../context/context";
+import TimedComponent from "../../components/TimedComponent";
 export default function Game() {
   // const [nickname, setNickname] = useAppContext();
   // const [storyMode, setStoryMode] = useaP(false);
@@ -17,54 +18,25 @@ export default function Game() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <code className={styles.code}>Told you! 🥸</code>
-        <code className={styles.code}>
-          <ToolTip title="Would you like to try story mode?">
-            Story mode is character-oriented chatbot, which implements custom
-            prompts and gamified interactions.
-          </ToolTip>
-        </code>
-        <Checkbox
-          checked={storyMode}
-          onChange={setStoryMode}
-          defaultChecked
-          color="info"
+        <TimedComponent text="Told you! 🥸" />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={storyMode}
+              onChange={setStoryMode}
+              defaultChecked
+              color="info"
+            />
+          }
+          label={
+            <ToolTip title="Would you like to try story mode?">
+              Story mode is character-oriented chatbot, which implements custom
+              prompts and gamified interactions.
+            </ToolTip>
+          }
         />
         {storyMode && (
           <>
-            <code className={styles.code}>
-              <ToolTip title="Great, choose your avatar">
-                You can use{" "}
-                <button
-                  className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
-                  role="button"
-                >
-                  Tab
-                </button>{" "}
-                ,
-                <button
-                  className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
-                  role="button"
-                >
-                  Shift
-                </button>{" "}
-                +
-                <button
-                  className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
-                  role="button"
-                >
-                  Tab
-                </button>{" "}
-                and{" "}
-                <button
-                  className={`${styles.buttonKeyboard} ${styles.tooltipBtn}`}
-                  role="button"
-                >
-                  Space
-                </button>{" "}
-                to navigate in a more special way!
-              </ToolTip>
-            </code>
             <AvatarsSelection setAvatarSelected={setNickname} />
           </>
         )}
@@ -76,7 +48,7 @@ export default function Game() {
           >
             {nickname}
             <NextLink href="/game/start" className={styles.buttonKeyboard}>
-              Next
+              <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
             </NextLink>
           </code>
         )}

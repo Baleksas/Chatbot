@@ -13,6 +13,8 @@ import {
   TextField,
 } from "@mui/material";
 import { useAppContext } from "../context/context";
+import NextLink from "next/link";
+import { Typography } from "@mui/material";
 
 interface ModelType {
   object: "engine";
@@ -138,26 +140,27 @@ const Form = () => {
         justifyContent: "space-between",
       }}
     >
-      <select
-        id="demo-simple-select"
-        value={currentModel}
-        className={formStyles.formSelect}
-        onChange={handleModelChange as any}
+      <Box
+        display={"flex"}
+        flexDirection={"row"}
+        justifyContent={"space-between"}
       >
-        {models.map((model) => (
-          <option key={model.id} value={model.id}>
-            {model.id}
-          </option>
-        ))}
-      </select>
+        <NextLink href="/game/">
+          <button className={styles.buttonKeyboard}>Back</button>
+        </NextLink>
 
-      <button
-        onClick={handleReset}
-        type="reset"
-        className={`${styles.buttonKeyboard} ${formStyles.formHistoryBtn}`}
-      >
-        Clear History
-      </button>
+        <Typography variant="h5">
+          {storyMode ? "Story Mode" : "Experiemental mode"}
+        </Typography>
+        <button
+          onClick={handleReset}
+          type="reset"
+          className={`${styles.buttonKeyboard} `}
+        >
+          Clear History
+        </button>
+      </Box>
+
       <Box>
         {isLoading ? (
           <CircularProgress />
@@ -180,6 +183,20 @@ const Form = () => {
         null}
       </Box>
       <FormControl>
+        <Select
+          sx={{
+            width: "max-content",
+          }}
+          value={currentModel}
+          label="Age"
+          onChange={handleModelChange as any}
+        >
+          {models.map((model) => (
+            <MenuItem key={model.id} value={model.id}>
+              {model.id}
+            </MenuItem>
+          ))}
+        </Select>
         <TextField
           name="Message"
           placeholder="Type your query"
@@ -187,6 +204,7 @@ const Form = () => {
           onKeyDown={handleEnter as any}
           multiline
         />
+
         <button
           disabled={isLoading}
           type="submit"

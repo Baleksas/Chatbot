@@ -27,7 +27,6 @@ const AvatarsSelection = ({ setAvatarSelected }: any) => {
             className={styles.buttonKeyboard}
             type="button"
             value={avatarName}
-            id="myButton1"
           ></input>
         );
       })}

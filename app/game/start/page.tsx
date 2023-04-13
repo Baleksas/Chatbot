@@ -14,11 +14,12 @@ import Form from "../../../components/Form";
 
 export default function Start() {
   const [agree, setAgree] = useState(false);
+  const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
 
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        {!agree ? (
+        {!agree && storyMode ? (
           <>
             <Greeting />
             <Rules />
@@ -34,12 +35,10 @@ export default function Start() {
             <Form />
           </Fragment>
         )}
-        {!agree ? (
+        {!agree && (
           <NextLink href="/game">
             <button className={styles.buttonKeyboard}>Back</button>
           </NextLink>
-        ) : (
-          <TimedComponent />
         )}
       </main>
     </div>
