@@ -137,7 +137,8 @@
 /* Tool tip */
 
 .tooltipText {
-  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
   z-index: 2;
   width: max-content;
@@ -145,16 +146,20 @@
   font-size: 12px;
   background-color: #6b8faf;
   border-radius: 10px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
+  transition: all 300ms ease-in-out;
 }
-
+.hoverText {
+  position: relative;
+}
 .hoverText:hover .tooltipText {
-  visibility: visible;
+  opacity: 1;
 }
 
 #top {
   top: -100px;
-  left: -50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #top::before {

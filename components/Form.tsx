@@ -4,7 +4,15 @@ import useSWR from "swr";
 import styles from "../styles/Home.module.css";
 import formStyles from "../styles/Form.module.css";
 
-import { Box, FormControl, MenuItem, Select, TextField } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  FormControl,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
+import { useAppContext } from "../context/context";
 
 interface ModelType {
   object: "engine";
@@ -21,6 +29,9 @@ const Form = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [models, setModels] = useState<ModelType[]>([]);
   const [currentModel, setCurrentModel] = useState<string>("gpt-3.5-turbo");
+  const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
+  console.log(nickname);
+  console.log(storyMode);
 
   const handleEnter = (
     e: React.KeyboardEvent<HTMLTextAreaElement> &
@@ -148,37 +159,25 @@ const Form = () => {
         Clear History
       </button>
       <Box>
-        {isLoading
-          ? response.map((item: any, index: number) => {
-              return (
-                <div
-                  key={index}
-                  className={`${
-                    index % 2 === 0
-                      ? formStyles.userChatbox
-                      : formStyles.aiChatbox
-                  } ${formStyles.chatbox}`}
-                >
-                  <p>{item}</p>
-                </div>
-              );
-            })
-          : response
-          ? response.map((item: string, index: number) => {
-              return (
-                <div
-                  key={index}
-                  className={`${
-                    index % 2 === 0
-                      ? formStyles.userChatbox
-                      : formStyles.aiChatbox
-                  } ${formStyles.chatbox}`}
-                >
-                  <p>{item}</p>
-                </div>
-              );
-            })
-          : null}
+        {isLoading ? (
+          <CircularProgress />
+        ) : response ? (
+          response.map((item: string, index: number) => {
+            return (
+              <div
+                key={index}
+                className={`${
+                  index % 2 === 0
+                    ? formStyles.userChatbox
+                    : formStyles.aiChatbox
+                } ${formStyles.chatbox}`}
+              >
+                <p>{item}</p>
+              </div>
+            );
+          })
+        ) : // Error
+        null}
       </Box>
       <FormControl>
         <TextField
