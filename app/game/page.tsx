@@ -41,18 +41,16 @@ export default function Game() {
             <AvatarsSelection setAvatarSelected={setNickname} />
           </>
         )}
-        {nickname && (
-          <code
-            style={{
-              fontSize: "35px",
-            }}
-          >
-            {storyMode ? <CustomName /> : null}
-            <NextLink href="/game/start" className={styles.buttonKeyboard}>
-              <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
-            </NextLink>
-          </code>
-        )}
+        <code
+          style={{
+            fontSize: "35px",
+          }}
+        >
+          {storyMode ? <CustomName /> : null}
+        </code>
+        <NextLink href="/game/start" className={styles.buttonKeyboard}>
+          <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
+        </NextLink>
         <NextLink href="/">
           <button className={styles.buttonKeyboard}>Back</button>
         </NextLink>

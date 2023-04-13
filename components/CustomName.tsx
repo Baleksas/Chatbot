@@ -16,6 +16,7 @@ const CustomName = () => {
   };
   useEffect(() => {
     setTempNickname(nickname);
+    setInputMode(false);
   }, [nickname]);
 
   const [inputMode, setInputMode] = useState(false);
