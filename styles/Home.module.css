@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 .container {
   padding: 0 2rem;
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -17,10 +17,14 @@
   border-radius: 5px;
   margin: auto;
 }
+
+/* Containers */
+
 .modelContainer {
   max-width: 300px;
   width: 80%;
-  height: 300px;
+  min-width: 400px;
+  height: 400px;
   align-items: center;
   border: 1px solid white;
   border-radius: 100%;
@@ -32,15 +36,15 @@
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
   align-items: center;
+
+  justify-content: space-around;
 }
 
 .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
 }
 /* Titlte */
 .title {
@@ -65,10 +69,7 @@
   font-size: 48px;
 }
 
-.title,
-.description {
-  text-align: center;
-}
+/* Components */
 .section {
   text-align: center;
   width: 100%;
@@ -76,6 +77,11 @@
   justify-content: space-around;
   justify-items: center;
 }
+.title,
+.description {
+  text-align: center;
+}
+
 .description {
   margin: 4rem 0;
   line-height: 1.5;
@@ -99,6 +105,8 @@
   flex-wrap: wrap;
   max-width: 800px;
 }
+
+/* Cards */
 
 .card {
   margin: 1rem;
@@ -155,7 +163,7 @@
 .hoverText:hover .tooltipText {
   opacity: 1;
 }
-
+/* Absolute */
 .top {
   top: -50px;
   left: 50%;
@@ -204,9 +212,8 @@
   text-align: center;
 }
 
-/* Button */
+/* Buttons */
 
-/* CSS */
 .buttonKeyboard {
   align-items: center;
   appearance: none;
@@ -228,7 +235,6 @@
   padding-left: 16px;
   padding-right: 16px;
   position: relative;
-  text-align: left;
   text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;
@@ -237,6 +243,7 @@
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+  width: max-content;
   margin: 1em;
 }
 .tooltipBtn {
@@ -266,19 +273,18 @@
   background-color: #ffffff;
   color: rgb(186, 82, 82);
 }
-
-.modelContainer {
-  min-width: 400px;
-  height: 400px;
-}
-.container {
-  width: 95%;
+.clearHistory {
+  font-size: 14px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
+/* Media queries */
 @media (max-width: 600px) {
   .modelContainer {
     width: 95%;
   }
+
   .container {
     width: 95%;
   }

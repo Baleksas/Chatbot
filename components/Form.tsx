@@ -141,14 +141,18 @@ const Form = () => {
       }}
     >
       <Box
-        display={"flex"}
-        flexDirection={"row"}
+        sx={{
+          display: "flex",
+          justifyItems: "center",
+          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" },
+        }}
         justifyContent={"space-between"}
       >
         <NextLink href="/game/">
-          <button className={styles.buttonKeyboard}>Back</button>
+          <button className={`${styles.buttonKeyboard} `}>Back</button>
         </NextLink>
-        <Box textAlign={"center"} padding={"auto"}>
+        <Box height={"max-content"} textAlign={"center"} margin={"auto"}>
           {storyMode ? (
             <>
               <Typography variant="h5" textAlign={"center"} margin={"auto"}>
@@ -168,7 +172,7 @@ const Form = () => {
         <button
           onClick={handleReset}
           type="reset"
-          className={`${styles.buttonKeyboard} `}
+          className={`${styles.buttonKeyboard} ${styles.clearHistory}`}
         >
           Clear History
         </button>
@@ -195,15 +199,14 @@ const Form = () => {
         ) : // Error
         null}
       </Box>
-      <FormControl>
-        <Select
-          sx={{
-            width: "max-content",
-          }}
-          value={currentModel}
-          label="Age"
-          onChange={handleModelChange as any}
-        >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Select value={currentModel} onChange={handleModelChange as any}>
           {models.map((model) => (
             <MenuItem key={model.id} value={model.id}>
               {model.id}
@@ -222,11 +225,11 @@ const Form = () => {
           disabled={isLoading}
           type="submit"
           onClick={handleSubmit as any}
-          className={`${styles.buttonKeyboard} ${styles.buttonFight}`}
+          className={`${styles.buttonKeyboard} ${styles.buttonFight} `}
         >
           Shout !
         </button>
-      </FormControl>
+      </Box>
     </Box>
   );
 };

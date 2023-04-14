@@ -14,10 +14,9 @@ export default function Home() {
   return (
     <Container maxWidth="sm">
       <main className={styles.main}>
-        <h1 className={styles.title}>🫵 VS 🤖</h1>
+        <h1 className={styles.title}>Chatbot</h1>
         <LazyModel model="/robot.gltf" />
 
-        <code className={styles.code}>A game you can&apos;t refuse to try</code>
         <NextLink className={styles.buttonKeyboard} href="/game">
           Play
         </NextLink>

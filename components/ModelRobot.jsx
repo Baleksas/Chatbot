@@ -16,8 +16,8 @@ const ModelRobot = ({ model }) => {
   const [target] = useState(new THREE.Vector3(0, 1, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
-      0 * Math.sin(0.2 * Math.PI),
-      0,
+      1 * Math.sin(0.2 * Math.PI),
+      100,
       10 * Math.cos(0.2 * Math.PI)
     )
   );
@@ -52,6 +52,7 @@ const ModelRobot = ({ model }) => {
       setRenderer(renderer);
 
       const scale = scH * 0.003;
+
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -60,6 +61,7 @@ const ModelRobot = ({ model }) => {
         0.1,
         50000
       );
+
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);

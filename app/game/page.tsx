@@ -19,7 +19,7 @@ export default function Game() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <TimedComponent text="Told you! 🥸" />
+        <TimedComponent text="Make sure to try story mode!" />
         <FormControlLabel
           control={
             <Checkbox

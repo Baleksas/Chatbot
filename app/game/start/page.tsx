@@ -27,18 +27,13 @@ export default function Start() {
               onClick={() => setAgree(true)}
               className={`${styles.buttonKeyboard} ${styles.buttonFight}`}
             >
-              FIGHT ⚔️
+              Start
             </button>
           </>
         ) : (
           <Fragment>
             <Form />
           </Fragment>
-        )}
-        {!agree && (
-          <NextLink href="/game">
-            <button className={styles.buttonKeyboard}>Back</button>
-          </NextLink>
         )}
       </main>
     </div>
