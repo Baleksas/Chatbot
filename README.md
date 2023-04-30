@@ -2,6 +2,8 @@
 
 I built this project to gain a better understanding of Next.js 13 features and to explore the possibilities of integrating OpenAI API and compare its various models' capabilities
 
+<img width="537" alt="Screenshot 2023-04-30 at 14 49 03" src="https://user-images.githubusercontent.com/58878092/235356435-ed08ffe0-e868-4fcd-a8b8-e306b57be1d3.png">
+
 ## Tech
 
 - Next.js 13
