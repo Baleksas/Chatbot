@@ -1,8 +1,10 @@
+import { InitialState } from "@/context/context";
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
 
 type RequestData = {
   currentModel: string;
   message: string;
+  nickname: string;
 };
 
 if (!process.env.OPENAI_API_KEY) {
@@ -13,16 +15,33 @@ if (!process.env.OPENAI_API_KEY) {
 export const runtime = "edge";
 
 export default async function handler(request: Request) {
-  const { currentModel, message } = (await request.json()) as RequestData;
+  const { currentModel, message, nickname } =
+    (await request.json()) as RequestData;
 
   if (!message) {
     return new Response("No message in the request", { status: 400 });
   }
 
+  const messages = [{ role: "user", content: message }];
+  if (nickname)
+    messages.push({
+      role: "system",
+      content: `Nickaname of the user is: ${nickname}. Greet user by his nickanem and talk in an adventurous speech.`,
+    });
+
   const payload: OpenAIStreamPayload = {
     model: "gpt-3.5-turbo",
     // model: `${currentModel}`,
-    messages: [{ role: "user", content: message }],
+    messages:
+      nickname !== InitialState.nickname
+        ? [
+            {
+              role: "system",
+              content: `Nickaname of the user is: ${nickname}. Greet user by his nickanem and talk in an adventurous speech.`,
+            },
+            { role: "user", content: message },
+          ]
+        : [{ role: "user", content: message }],
     temperature: 0.7,
     top_p: 1,
     frequency_penalty: 0,
@@ -31,7 +50,7 @@ export default async function handler(request: Request) {
     stream: true,
     n: 1,
   };
-
+  console.log(payload);
   const stream = await OpenAIStream(payload);
   return new Response(stream);
 }

@@ -66,6 +66,7 @@ const Form = () => {
       body: JSON.stringify({
         message,
         currentModel,
+        nickname,
       }),
     });
     console.log("Edge function returned.");
