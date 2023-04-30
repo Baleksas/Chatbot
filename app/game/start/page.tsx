@@ -22,7 +22,7 @@ export default function Start() {
         {!agree && storyMode ? (
           <>
             <Greeting />
-            <Rules />
+            <Rules nickname={nickname} />
             <button
               onClick={() => setAgree(true)}
               className={`${styles.buttonKeyboard} ${styles.buttonFight}`}

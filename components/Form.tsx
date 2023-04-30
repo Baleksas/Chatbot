@@ -67,6 +67,7 @@ const Form = () => {
         message,
         currentModel,
         nickname,
+        storyMode,
       }),
     });
     console.log("Edge function returned.");
@@ -179,7 +180,15 @@ const Form = () => {
         </button>
       </Box>
 
-      <Box flex={1}>
+      <Box
+        border={"0.5px solid white"}
+        margin={"10px"}
+        borderRadius={"10px"}
+        overflow={"auto"}
+        display={"flex"}
+        flexDirection={"column"}
+        flex={1}
+      >
         {isLoading ? (
           <CircularProgress />
         ) : response ? (
