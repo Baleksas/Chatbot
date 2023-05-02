@@ -12,8 +12,6 @@ import { InitialState } from "../../context/context";
 import TimedComponent from "../../components/TimedComponent";
 import CustomName from "@/components/CustomName";
 export default function Game() {
-  // const [nickname, setNickname] = useAppContext();
-  // const [storyMode, setStoryMode] = useaP(false);
   const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
 
   return (
