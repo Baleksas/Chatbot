@@ -1,16 +1,12 @@
 "use client";
-import NextLink from "next/link";
-
-import React from "react";
-import AvatarsSelection from "../../components/AvatarsSelection";
-import ToolTip from "../../components/ToolTip";
-import styles from "../../styles/Home.module.css";
-import { useState, useContext, useEffect } from "react";
-import { useAppContext } from "../../context/context";
-import { Box, Checkbox, FormControlLabel } from "@mui/material";
-import { InitialState } from "../../context/context";
-import TimedComponent from "../../components/TimedComponent";
 import CustomName from "@/components/CustomName";
+import { Checkbox, FormControlLabel } from "@mui/material";
+import NextLink from "next/link";
+import AvatarsSelection from "../../components/AvatarsSelection";
+import TimedComponent from "../../components/TimedComponent";
+import ToolTip from "../../components/ToolTip";
+import { useAppContext } from "../../context/context";
+import styles from "../../styles/Home.module.css";
 export default function Game() {
   const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
 
@@ -19,12 +15,7 @@ export default function Game() {
       <TimedComponent text="Make sure to try story mode!" />
       <FormControlLabel
         control={
-          <Checkbox
-            checked={storyMode}
-            onChange={setStoryMode}
-            defaultChecked
-            color="info"
-          />
+          <Checkbox checked={storyMode} onChange={setStoryMode} color="info" />
         }
         label={
           <ToolTip title="Would you like to try story mode?">

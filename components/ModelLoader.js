@@ -8,7 +8,7 @@ export const ModelSpinner = () => (
       position: "absolute",
       justifyContent: "center",
       justifyItems: "center",
-      top: "45%",
+      top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
     }}

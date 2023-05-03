@@ -18,7 +18,7 @@ const ModelRobot = ({ model }) => {
     new THREE.Vector3(
       1 * Math.sin(0.2 * Math.PI),
       100,
-      10 * Math.cos(0.2 * Math.PI)
+      10 * Math.cos(0.1 * Math.PI)
     )
   );
   const [scene] = useState(new THREE.Scene());
@@ -51,7 +51,7 @@ const ModelRobot = ({ model }) => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const scale = scH * 0.003;
+      const scale = scH * 0.005;
 
       const camera = new THREE.OrthographicCamera(
         -scale,
