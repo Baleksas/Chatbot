@@ -12,15 +12,13 @@ const LazyModel = dynamic(() => import("../components/ModelRobot"), {
 
 export default function Home() {
   return (
-    <Container maxWidth="sm">
-      <main className={styles.main}>
-        <h1 className={styles.title}>Chatbot</h1>
-        <LazyModel model="/robot.gltf" />
+    <main className={styles.main}>
+      <h1 className={styles.title}>Chatbot</h1>
+      <LazyModel model="/robot.gltf" />
 
-        <NextLink className={styles.buttonKeyboard} href="/game">
-          Play
-        </NextLink>
-      </main>
-    </Container>
+      <NextLink className={styles.buttonKeyboard} href="/game">
+        Play
+      </NextLink>
+    </main>
   );
 }

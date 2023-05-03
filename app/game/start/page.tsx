@@ -17,25 +17,23 @@ export default function Start() {
   const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        {!agree && storyMode ? (
-          <>
-            <Greeting />
-            <Rules nickname={nickname} />
-            <button
-              onClick={() => setAgree(true)}
-              className={`${styles.buttonKeyboard} ${styles.buttonFight}`}
-            >
-              Start
-            </button>
-          </>
-        ) : (
-          <Fragment>
-            <Form />
-          </Fragment>
-        )}
-      </main>
-    </div>
+    <main className={styles.main}>
+      {!agree && storyMode ? (
+        <>
+          <Greeting />
+          <Rules nickname={nickname} />
+          <button
+            onClick={() => setAgree(true)}
+            className={`${styles.buttonKeyboard} ${styles.buttonFight}`}
+          >
+            Start
+          </button>
+        </>
+      ) : (
+        <Fragment>
+          <Form />
+        </Fragment>
+      )}
+    </main>
   );
 }

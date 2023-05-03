@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-.container {
-  padding: 0 2rem;
-  width: 90%;
-  margin: auto;
-}
 
 .main {
   min-height: 100vh;
@@ -21,14 +16,14 @@
 /* Containers */
 
 .modelContainer {
-  max-width: 300px;
+  max-width: 400px;
   width: 80%;
   min-width: 400px;
   height: 400px;
   align-items: center;
-  border: 1px solid white;
+  border: 1px solid #eaeaea;
   border-radius: 100%;
-  margin: 2em;
+  margin: 2em 0;
   overflow: hidden;
 }
 .footer {
@@ -37,7 +32,6 @@
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   align-items: center;
-
   justify-content: space-around;
 }
 
@@ -285,9 +279,6 @@
     width: 95%;
   }
 
-  .container {
-    width: 95%;
-  }
   .grid {
     width: 100%;
     flex-direction: column;

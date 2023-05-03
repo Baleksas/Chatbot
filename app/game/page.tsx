@@ -15,44 +15,42 @@ export default function Game() {
   const [[nickname, setNickname], [storyMode, setStoryMode]] = useAppContext();
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <TimedComponent text="Make sure to try story mode!" />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={storyMode}
-              onChange={setStoryMode}
-              defaultChecked
-              color="info"
-            />
-          }
-          label={
-            <ToolTip title="Would you like to try story mode?">
-              Story mode is character-oriented chatbot, which implements custom
-              prompts and gamified interactions.
-            </ToolTip>
-          }
-        />
-        {storyMode && (
-          <>
-            <AvatarsSelection setAvatarSelected={setNickname} />
-          </>
-        )}
-        <code
-          style={{
-            fontSize: "35px",
-          }}
-        >
-          {storyMode ? <CustomName /> : null}
-        </code>
-        <NextLink href="/game/start" className={styles.buttonKeyboard}>
-          <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
-        </NextLink>
-        <NextLink href="/">
-          <button className={styles.buttonKeyboard}>Back</button>
-        </NextLink>
-      </main>
-    </div>
+    <main className={styles.main}>
+      <TimedComponent text="Make sure to try story mode!" />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={storyMode}
+            onChange={setStoryMode}
+            defaultChecked
+            color="info"
+          />
+        }
+        label={
+          <ToolTip title="Would you like to try story mode?">
+            Story mode is character-oriented chatbot, which implements custom
+            prompts and gamified interactions.
+          </ToolTip>
+        }
+      />
+      {storyMode && (
+        <>
+          <AvatarsSelection setAvatarSelected={setNickname} />
+        </>
+      )}
+      <code
+        style={{
+          fontSize: "35px",
+        }}
+      >
+        {storyMode ? <CustomName /> : null}
+      </code>
+      <NextLink href="/game/start" className={styles.buttonKeyboard}>
+        <b> {storyMode ? "Explore 🐙" : "Experiment 🤖"}</b>
+      </NextLink>
+      <NextLink href="/">
+        <button className={styles.buttonKeyboard}>Back</button>
+      </NextLink>
+    </main>
   );
 }
