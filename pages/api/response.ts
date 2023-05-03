@@ -30,7 +30,7 @@ export default async function handler(request: Request) {
       ? [
           {
             role: "system",
-            content: `Nickaname of the user is: ${nickname}. Greet user by his nickanem and talk in an adventurous speech.`,
+            content: `Nickname of the user is: ${nickname}. First time, greet him. Talk in an adventurous speech.`,
           },
           { role: "user", content: message },
         ]
