@@ -2,7 +2,6 @@
 import { useRef, useState } from "react";
 import useSWR from "swr";
 import styles from "../styles/Home.module.css";
-import formStyles from "../styles/Form.module.css";
 
 import {
   Box,
@@ -197,10 +196,8 @@ const Form = () => {
               <div
                 key={index}
                 className={`${
-                  index % 2 === 0
-                    ? formStyles.userChatbox
-                    : formStyles.aiChatbox
-                } ${formStyles.chatbox}`}
+                  index % 2 === 0 ? styles.userChatbox : styles.aiChatbox
+                } ${styles.chatbox}`}
               >
                 <p>{item}</p>
               </div>

@@ -271,6 +271,27 @@
   padding-right: 8px;
 }
 
+/* Chat */
+
+.chatbox {
+  border-radius: 5px;
+  width: max-content;
+  max-width: 90%;
+  margin: 10px 0;
+  padding: 0 15px;
+}
+.userChatbox {
+  background-color: white;
+  color: black;
+  margin-right: auto;
+}
+.aiChatbox {
+  background-color: black;
+  margin-left: auto;
+  color: white;
+  float: right;
+}
+
 /* Media queries */
 @media (max-width: 600px) {
   .modelContainer {
